@@ -2,23 +2,17 @@ const mongoose = require("./db_connection");
 
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
-  created: { type: Date, default: Date.now },
-  owner: {type: Schema.Types.ObjectId, ref: "User"},
-  content: { type: String, required: true },
-  users: [{type: Schema.Types.ObjectId, ref: "User"}],
-});
 
-const UserSchema = new Schema({
-  created: { type: Date, default: Date.now },
-  firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  passwordHash: { type: String, required: true },
-  role: { type: String, required: true },
+const SchoolSchema = new Schema({
+  ranking: { type: String},
+  mean: { type: String, required: true },
+  participants: { type: String, required: true },
+  id: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  coords: { type: String, required: true },
+  linjat: { type: Array, required: false },
 });
 
 module.exports = {
-  Item: mongoose.model("Item", ItemSchema),
-  User: mongoose.model("User", UserSchema),
+  School: mongoose.model("School", SchoolSchema),
 };
