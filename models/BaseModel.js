@@ -17,7 +17,10 @@ class BaseModel {
     return this.Models[this.modelname].find(params);
   }
   findOne(params) {
-    return this.Models[this.modelname].findOne(params);
+    return this.Models[this.modelname].findOne({id: params});
+  }
+  findById(id) {
+    return this.Models[this.modelname].findById(id);
   }
   updateById(values, id) {
     return this.Models[this.modelname].findByIdAndUpdate(id, { $set: values });

@@ -7,12 +7,15 @@ const db = require("../db/methods")
 module.exports.findSchool = (req, res) => {
     HELService
         .getSchool(req.params.id)
-        .then(address => {
-            res.status(200).send(address);
+        .then(school => {
+            res.status(200).send(school);
         })
 };
 
-module.exports.findFromDBSchool = (req, res) => {
+module.exports.findSchoolFromDB = (req, res) => {
     var asd = School.findAll();
-    School.findAll(schools => { console.log(schools) })
+    School.findOne(req.params.id).then(school => {
+        console.log(school)
+        res.status(200).send(school);
+    })
 };
