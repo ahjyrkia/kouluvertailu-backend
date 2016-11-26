@@ -32,7 +32,9 @@
     "moment": "^2.14.1",
     "mongoose": "^4.5.8",
     "morgan": "^1.7.0",
-    "schema-inspector": "^1.6.5"
+    "schema-inspector": "^1.6.5",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
